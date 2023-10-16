@@ -29,8 +29,6 @@ import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 
-import javax.validation.constraints.NotEmpty;
-
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.Validate;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -89,12 +87,13 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class OBOracleSchemaAccessor extends OracleSchemaAccessor {
-    private static final Set<String> ESCAPE_USER_SET = new HashSet<>(3);
+    private static final Set<String> ESCAPE_USER_SET = new HashSet<>(4);
 
     static {
         ESCAPE_USER_SET.add("PUBLIC");
         ESCAPE_USER_SET.add("LBACSYS");
         ESCAPE_USER_SET.add("ORAAUDITOR");
+        ESCAPE_USER_SET.add("__public");
     }
 
     public OBOracleSchemaAccessor(JdbcOperations jdbcOperations,

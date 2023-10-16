@@ -76,6 +76,7 @@ public abstract class BaseTestEnv extends BasePropertiesEnv {
 
         String mysqlCommandLine = get(MYSQL_COMMANDLINE_KEY);
         ConnectionParseResult mysqlParseResult = MySQLClientArgsParser.parse(mysqlCommandLine);
+        initDataSource(mysqlParseResult, MYSQL_DS_KEY);
 
         OracleConnectionConfig oracleConfig = buildOracleConnectionConfig();
         initOracleDataSource(oracleConfig);

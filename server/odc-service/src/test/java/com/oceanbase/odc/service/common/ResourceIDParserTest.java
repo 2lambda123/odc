@@ -16,6 +16,7 @@
 package com.oceanbase.odc.service.common;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -163,4 +164,14 @@ public class ResourceIDParserTest {
         Assert.assertEquals("CHZ::", identifier.getDatabase());
         Assert.assertEquals("TEST", identifier.getTable());
     }
+
+    @Test
+    @Ignore("TODO: refactor SID mechanism")
+    public void testParse_DatabaseNameC_Success() {
+        ResourceIdentifier identifier = ResourceIDParser.parse("sid:12-1:d:c:t:TEST");
+        Assert.assertEquals("12-1", identifier.getSid());
+        Assert.assertEquals("c::", identifier.getDatabase());
+        Assert.assertEquals("TEST", identifier.getTable());
+    }
+
 }

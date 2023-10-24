@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.oceanbase.odc.service.datatransfer.model;
+package com.oceanbase.odc.plugin.task.api.datatransfer.model;
 
 import java.io.Serializable;
 import java.util.List;
@@ -23,7 +23,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 import com.oceanbase.odc.common.json.SensitiveInput;
 import com.oceanbase.odc.core.shared.model.TaskParameters;
-import com.oceanbase.odc.service.connection.model.ConnectionConfig;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -42,11 +41,12 @@ import lombok.ToString;
 @EqualsAndHashCode
 @ToString(exclude = {"sysPassword"})
 public class DataTransferConfig implements Serializable, TaskParameters {
+
     private String schemaName;
     private Long databaseId;
     private Long connectionId;
     @JsonIgnore
-    private ConnectionConfig connectionConfig;
+    private DatabaseConfig connectionConfig;
     private DataTransferType transferType;
     private DataTransferFormat dataTransferFormat;
     private boolean transferData;
@@ -103,4 +103,5 @@ public class DataTransferConfig implements Serializable, TaskParameters {
     public void setFileType(String fileType) {
         this.notObLoaderDumperCompatible = !"ZIP".equals(fileType);
     }
+
 }

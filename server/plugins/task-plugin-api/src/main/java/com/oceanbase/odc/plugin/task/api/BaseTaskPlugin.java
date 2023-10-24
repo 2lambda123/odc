@@ -13,20 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.oceanbase.odc.service.partitionplan.model;
 
-import java.io.Serializable;
+package com.oceanbase.odc.plugin.task.api;
 
-import com.oceanbase.odc.core.shared.model.TaskParameters;
+import org.pf4j.Plugin;
 
-import lombok.Data;
+import com.oceanbase.odc.core.shared.constant.DialectType;
 
-/**
- * @Author：tianke
- * @Date: 2022/9/20 01:35
- * @Descripition:
- */
-@Data
-public class PartitionPlanTaskParameters implements Serializable, TaskParameters {
-    private DatabasePartitionPlan connectionPartitionPlan;
+public abstract class BaseTaskPlugin extends Plugin {
+
+    public abstract DialectType getDialectType();
+
 }

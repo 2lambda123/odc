@@ -13,20 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.oceanbase.odc.service.partitionplan.model;
+package com.oceanbase.odc.plugin.task.api.datatransfer.model;
 
-import java.io.Serializable;
-
-import com.oceanbase.odc.core.shared.model.TaskParameters;
-
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 /**
- * @Author：tianke
- * @Date: 2022/9/20 01:35
- * @Descripition:
+ * csv file mapping
+ *
+ * @author yh263208
+ * @date 2021-03-22 17:59
+ * @since ODC_release_2.4.1
  */
-@Data
-public class PartitionPlanTaskParameters implements Serializable, TaskParameters {
-    private DatabasePartitionPlan connectionPartitionPlan;
+@Getter
+@Setter
+@ToString
+public class CsvColumnMapping {
+    private Integer srcColumnPosition;
+    private String srcColumnName;
+    private String firstLineValue;
+    private String destColumnName;
+    private String destColumnType;
+    private Integer destColumnPosition;
 }

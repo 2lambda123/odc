@@ -13,41 +13,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.oceanbase.odc.service.flow.task.model;
+package com.oceanbase.odc.plugin.task.api.datatransfer.model;
 
-import java.io.Serializable;
+import com.oceanbase.tools.loaddump.common.enums.ObjectType;
 
-import com.oceanbase.odc.core.shared.model.TaskParameters;
-
-import lombok.EqualsAndHashCode;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 /**
- * config information for data mock task
+ * odc export object which illustrate this map relationshit between name and db object
  *
  * @author yh263208
- * @date 2021-01-20 15:46
- * @since ODC_release_2.4.0
+ * @date 2021-03-22 17:53
+ * @since ODC_release_2.4.1
  */
 @Setter
 @Getter
-@EqualsAndHashCode
-public class MockTaskConfig implements Serializable, TaskParameters {
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+public class DataTransferObject {
     /**
-     * task id for data mock task
+     * object type enum
      */
-    private String id;
+    private ObjectType dbObjectType;
     /**
-     * task type
+     * object name
      */
-    private final CommonTaskTypeEnum taskType = CommonTaskTypeEnum.MOCK_DATA;
-    /**
-     * task name
-     */
-    private String taskName;
-    /**
-     * task detail, json string
-     */
-    private String taskDetail;
+    private String objectName;
 }

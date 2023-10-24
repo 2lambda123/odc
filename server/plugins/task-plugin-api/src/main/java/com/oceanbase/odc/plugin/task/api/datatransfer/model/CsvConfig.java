@@ -13,41 +13,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.oceanbase.odc.service.flow.task.model;
+package com.oceanbase.odc.plugin.task.api.datatransfer.model;
 
-import java.io.Serializable;
-
-import com.oceanbase.odc.core.shared.model.TaskParameters;
-
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 /**
- * config information for data mock task
+ * CSV file configuration
  *
- * @author yh263208
- * @date 2021-01-20 15:46
- * @since ODC_release_2.4.0
+ * @date 2021-03-23 11:00
+ * @since ODC_release_2.4.1
  */
-@Setter
 @Getter
-@EqualsAndHashCode
-public class MockTaskConfig implements Serializable, TaskParameters {
+@Setter
+@ToString
+public class CsvConfig {
+    private EncodingType encoding = EncodingType.UTF_8;
+    private String fileName;
     /**
-     * task id for data mock task
+     * flag to illustrate whether convert empty string to null
      */
-    private String id;
+    private boolean blankToNull;
     /**
-     * task type
+     * flag to illustrate whether skip csv's header
      */
-    private final CommonTaskTypeEnum taskType = CommonTaskTypeEnum.MOCK_DATA;
-    /**
-     * task name
-     */
-    private String taskName;
-    /**
-     * task detail, json string
-     */
-    private String taskDetail;
+    private boolean skipHeader = true;
+    private String columnSeparator = ",";
+    private String lineSeparator = "\n";
+    private String columnDelimiter = "'";
 }

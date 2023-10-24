@@ -27,6 +27,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo.As;
 import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 import com.oceanbase.odc.core.shared.PreConditions;
 import com.oceanbase.odc.core.shared.constant.TaskType;
+import com.oceanbase.odc.core.shared.model.TaskParameters;
 import com.oceanbase.odc.service.datatransfer.model.DataTransferConfig;
 import com.oceanbase.odc.service.flow.processor.CreateFlowInstanceProcessAspect;
 import com.oceanbase.odc.service.flow.task.model.DatabaseChangeParameters;

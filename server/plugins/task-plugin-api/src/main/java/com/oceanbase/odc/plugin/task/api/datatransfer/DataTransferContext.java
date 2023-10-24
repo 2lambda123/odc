@@ -13,20 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.oceanbase.odc.service.partitionplan.model;
 
-import java.io.Serializable;
+package com.oceanbase.odc.plugin.task.api.datatransfer;
 
-import com.oceanbase.odc.core.shared.model.TaskParameters;
+import java.util.List;
+import java.util.concurrent.Future;
 
-import lombok.Data;
+import com.oceanbase.tools.loaddump.common.model.ObjectStatus;
 
-/**
- * @Author：tianke
- * @Date: 2022/9/20 01:35
- * @Descripition:
- */
-@Data
-public class PartitionPlanTaskParameters implements Serializable, TaskParameters {
-    private DatabasePartitionPlan connectionPartitionPlan;
+public interface DataTransferContext extends Future<DataTransferResult> {
+
+    double getProgress();
+
+    List<ObjectStatus> getDataObjectsInfo();
+
+    List<ObjectStatus> getSchemaObjectsInfo();
+
 }

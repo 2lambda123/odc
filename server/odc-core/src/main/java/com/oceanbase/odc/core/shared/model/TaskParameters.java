@@ -13,20 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.oceanbase.odc.service.partitionplan.model;
-
-import java.io.Serializable;
-
-import com.oceanbase.odc.core.shared.model.TaskParameters;
-
-import lombok.Data;
+package com.oceanbase.odc.core.shared.model;
 
 /**
- * @Author：tianke
- * @Date: 2022/9/20 01:35
- * @Descripition:
+ * {@link TaskParameters}
+ *
+ * @author yh263208
+ * @date 2022-05-16 20:40
+ * @since ODC_release_3.3.1
  */
-@Data
-public class PartitionPlanTaskParameters implements Serializable, TaskParameters {
-    private DatabasePartitionPlan connectionPartitionPlan;
+public interface TaskParameters {
 }

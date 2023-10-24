@@ -69,6 +69,7 @@ import com.oceanbase.odc.core.shared.constant.TaskType;
 import com.oceanbase.odc.core.shared.exception.NotFoundException;
 import com.oceanbase.odc.core.shared.exception.OverLimitException;
 import com.oceanbase.odc.core.shared.exception.VerifyException;
+import com.oceanbase.odc.core.shared.model.TaskParameters;
 import com.oceanbase.odc.metadb.flow.FlowInstanceEntity;
 import com.oceanbase.odc.metadb.flow.FlowInstanceRepository;
 import com.oceanbase.odc.metadb.flow.FlowInstanceSpecs;
@@ -111,7 +112,6 @@ import com.oceanbase.odc.service.flow.model.FlowNodeInstanceDetailResp.FlowNodeI
 import com.oceanbase.odc.service.flow.model.FlowNodeStatus;
 import com.oceanbase.odc.service.flow.model.FlowNodeType;
 import com.oceanbase.odc.service.flow.model.QueryFlowInstanceParams;
-import com.oceanbase.odc.service.flow.model.TaskParameters;
 import com.oceanbase.odc.service.flow.processor.EnablePreprocess;
 import com.oceanbase.odc.service.flow.task.BaseRuntimeFlowableDelegate;
 import com.oceanbase.odc.service.flow.task.model.DatabaseChangeParameters;

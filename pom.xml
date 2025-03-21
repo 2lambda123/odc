@@ -99,7 +99,7 @@
         <alibaba-dingtalk-service-sdk.version>2.0.0</alibaba-dingtalk-service-sdk.version>
         <org.apache.tika.version>2.7.0</org.apache.tika.version>
         <fasterxml.woodstox.version>6.4.0</fasterxml.woodstox.version>
-        <groovy-all.version>2.4.7</groovy-all.version>
+        <groovy-all.version>2.4.21</groovy-all.version>
 
         <!-- aliyun-sdk version -->
         <aliyun-sdk.version>4.6.2</aliyun-sdk.version>

@@ -112,7 +112,7 @@
         <!-- ob-loader-dumper involved -->
         <hadoop-common.version>3.3.4</hadoop-common.version>
         <netty.version>4.1.85.Final</netty.version>
-        <mina.version>2.1.6</mina.version>
+        <mina.version>2.1.10</mina.version>
 
         <!-- data-lifecycle-manager version -->
         <data-lifecycle-manager.version>1.0.3</data-lifecycle-manager.version>
